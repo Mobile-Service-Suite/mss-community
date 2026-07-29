@@ -1,0 +1,17 @@
+# Never commit diagnostic or customer artifacts.
+*.log
+*.dmp
+*.zip
+*.7z
+*.rar
+*.ipa
+*.apk
+*.mss
+*.db
+*.sqlite
+*.sqlite3
+*.env
+*.key
+*.pem
+*.pfx
+*.p12
