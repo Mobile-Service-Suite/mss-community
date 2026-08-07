@@ -3,14 +3,20 @@
 **MSS — единое рабочее место для сервисного центра:** Android, Apple, резервные копии, приложения, контакты и перенос данных в одном Windows-приложении.
 
 [Сайт и документация](https://mssuite.ru/) ·
-[Скачать Beta build 0026](https://api.mssuite.ru/downloads/Mobile_Service_Suite_0.5.0-beta.0026.zip) ·
+[Скачать Beta build 0027](https://api.mssuite.ru/downloads/Mobile_Service_Suite_0.5.0-beta.0027.zip) ·
 [Сообщить об ошибке](https://github.com/Mobile-Service-Suite/mss-community/issues/new?template=bug_report.yml) ·
 [Предложить функцию](https://github.com/Mobile-Service-Suite/mss-community/issues/new?template=feature_request.yml) ·
 [Безопасность](https://github.com/Mobile-Service-Suite/mss-community/security)
 
-> Текущая публичная версия: **0.5.0 Beta · build 0026** для Windows 10/11 x64.
+> Текущая публичная версия: **0.5.0 Beta · build 0027** для Windows 10/11 x64.
 
-> SHA-256 ZIP: **F34CC6E29D46CDB703998FDD5D879BB9F8669FA6BFD9EF271F9725859C22113F**
+> SHA-256 ZIP: **680482B8F415B6ADB86E09A1C940F521AA7B3CE6B390D1F0F45C2779A5C7D4EA**
+
+## Важное исправление build 0027
+
+В архиве build 0026 при очередной упаковке не попали две транзитивные библиотеки Apple runtime — `libbz2-1.dll` и `liblzma-5.dll`, необходимые поставляемой `libzip.dll`. На компьютере разработчика ошибка маскировалась установленным окружением, а на чистых клиентских ПК `ideviceinstaller` завершался до начала установки IPA с кодом Windows `0xC0000135` (`STATUS_DLL_NOT_FOUND`).
+
+Build 0027 содержит полный комплект библиотек. Релизный сценарий дополнен проверкой обязательных DLL и изолированным запуском `ideviceinstaller` с системным `PATH`, поэтому неполный пакет теперь блокируется до публикации. Пользователям build 0026 рекомендуется скачать ZIP 0027 и распаковать его полностью в отдельную папку.
 
 > Публичная Beta действует до **30 сентября 2026 года**. Сборка распространяется вручную через сайт.
 
